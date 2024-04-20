@@ -88,6 +88,7 @@ class DataTransformation:
             train_df = train_df[train_df['speed'] <= 105]
             test_df = test_df[test_df['speed'] <= 105]
 
+            #NYC Taxis can carry at max 5 passengers
             train_df = train_df[(train_df['passenger_count'] <= 5) & (train_df['passenger_count']>0)]
             test_df = test_df[(test_df['passenger_count'] <= 5) & (test_df['passenger_count']>0)]
 
