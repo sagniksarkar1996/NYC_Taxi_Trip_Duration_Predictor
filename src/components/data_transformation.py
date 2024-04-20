@@ -25,6 +25,7 @@ class DataTransformation:
     def get_data_transformation_object(self):
         try:
             logging.info('Data Transformation initiated')
+            
             # Defining the categorical columns and the numerical columns
             categorical_cols = ['vendor_id', 'passenger_count', 'day_of_the_week', 'month', 'hour']
             numerical_cols = ['distance', 'speed']
@@ -86,6 +87,9 @@ class DataTransformation:
             #removing the rows with speed more than 105km/hr according to max speed rules set by American government on freeways
             train_df = train_df[train_df['speed'] <= 105]
             test_df = test_df[test_df['speed'] <= 105]
+
+            train_df = train_df[(train_df['passenger_count'] <= 5) & (train_df['passenger_count']>0)]
+            test_df = test_df[(test_df['passenger_count'] <= 5) & (test_df['passenger_count']>0)]
 
             #removing outliers from distance and calculated_duration 
             train_df = remove_outliers(train_df, columns=['distance', 'calculated_duration'], threshold=1.5)
