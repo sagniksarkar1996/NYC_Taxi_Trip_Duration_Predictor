@@ -64,4 +64,4 @@ jobs:
         with:
           app-name: 'nyctaxitripdurationpredictor'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EE44BB78C2C446A58E67B39DE5A00CC1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3CEECE9F3F234381B112B2AAF5B40824 }}
